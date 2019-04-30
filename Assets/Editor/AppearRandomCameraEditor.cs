@@ -6,8 +6,9 @@ namespace Unity3dModelControl
 {
     public class AppearRandomCameraEditor : EditorWindow
     {
+        private Vector3 targetPosition = Vector3.zero;
         private Transform targetObject = null;
-        private float targetRadius = 1f;
+        private float targetRadius = 3f;
 
         [MenuItem("Tools/AppearRandomCameraEditor")]
         static void ShowSettingWindow()
@@ -18,12 +19,29 @@ namespace Unity3dModelControl
         void OnGUI()
         {
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("TargetGameObject");
-            targetObject = EditorGUILayout.ObjectField(
+            EditorGUILayout.LabelField("TargetPosition");
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.BeginHorizontal();
+            float newX = EditorGUILayout.FloatField("x:", targetPosition.x);
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.BeginHorizontal();
+            float newY = EditorGUILayout.FloatField("y:", targetPosition.y);
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.BeginHorizontal();
+            float newZ = EditorGUILayout.FloatField("z:", targetPosition.z);
+            EditorGUILayout.EndHorizontal();
+            targetPosition = new Vector3(newX, newY, newZ);
+            EditorGUILayout.BeginHorizontal();
+            Transform updateTargetTransform = EditorGUILayout.ObjectField(
                 targetObject,
                 typeof(Transform),
                 true
             ) as Transform;
+            if (updateTargetTransform != targetObject)
+            {
+                targetPosition = updateTargetTransform.transform.position;
+                targetObject = updateTargetTransform;
+            }
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("targetRadius");
@@ -41,13 +59,8 @@ namespace Unity3dModelControl
         {
             GameObject newCameraObject = new GameObject("Camera");
             Camera newCamera = newCameraObject.AddComponent<Camera>();
-            Vector3 centerPosition = Vector3.zero;
-            if(targetObject != null)
-            {
-                centerPosition = targetObject.position;
-            }
-            Debug.Log(RandomCameraPosition(centerPosition));
-            newCamera.transform.position = RandomCameraPosition(centerPosition);
+            newCamera.transform.position = RandomCameraPosition(targetPosition);
+            newCamera.transform.LookAt(targetPosition);
             Selection.activeGameObject = newCamera.gameObject;
         }
 
