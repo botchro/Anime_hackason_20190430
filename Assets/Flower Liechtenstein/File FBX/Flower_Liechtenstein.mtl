@@ -1,0 +1,58 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 30.11.2018 00:09:16
+
+newmtl 03___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.1800 0.1800 0.1800
+	Ke 0.0000 0.0000 0.0000
+	map_Ka E:\Cuongvc\Cong viec hang ngay\Model 3D and rexture 2018\pack 3D tong hop\Hoa_quocs gia\CA_Liechtenstein_Lily Vàng\dm1.psd
+	map_Kd E:\Cuongvc\Cong viec hang ngay\Model 3D and rexture 2018\pack 3D tong hop\Hoa_quocs gia\CA_Liechtenstein_Lily Vàng\dm1.psd
+
+newmtl 04___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.1620 0.1620 0.1620
+	Ke 0.0000 0.0000 0.0000
+	map_Ka E:\Cuongvc\Cong viec hang ngay\Model 3D and rexture 2018\pack 3D tong hop\Hoa_quocs gia\CA_Liechtenstein_Lily Vàng\dm2.psd
+	map_Kd E:\Cuongvc\Cong viec hang ngay\Model 3D and rexture 2018\pack 3D tong hop\Hoa_quocs gia\CA_Liechtenstein_Lily Vàng\dm2.psd
+
+newmtl 05___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.1620 0.1620 0.1620
+	Ke 0.0000 0.0000 0.0000
+	map_Ka E:\Cuongvc\Cong viec hang ngay\Model 3D and rexture 2018\pack 3D tong hop\Hoa_quocs gia\CA_Liechtenstein_Lily Vàng\dm3.psd
+	map_Kd E:\Cuongvc\Cong viec hang ngay\Model 3D and rexture 2018\pack 3D tong hop\Hoa_quocs gia\CA_Liechtenstein_Lily Vàng\dm3.psd
+
+newmtl 06___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.1530 0.1530 0.1530
+	Ke 0.0000 0.0000 0.0000
+	map_Ka E:\Cuongvc\Cong viec hang ngay\Model 3D and rexture 2018\pack 3D tong hop\Hoa_quocs gia\CA_Liechtenstein_Lily Vàng\dm4.psd
+	map_Kd E:\Cuongvc\Cong viec hang ngay\Model 3D and rexture 2018\pack 3D tong hop\Hoa_quocs gia\CA_Liechtenstein_Lily Vàng\dm4.psd
