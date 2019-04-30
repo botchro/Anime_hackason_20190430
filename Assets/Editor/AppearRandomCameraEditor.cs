@@ -9,6 +9,8 @@ namespace Unity3dModelControl
         private Vector3 targetPosition = Vector3.zero;
         private Transform targetObject = null;
         private float targetRadius = 3f;
+        private bool attachFollowupCamera = false;
+        private bool attachLookupCamera = false;
 
         [MenuItem("Tools/AppearRandomCameraEditor")]
         static void ShowSettingWindow()
@@ -47,6 +49,17 @@ namespace Unity3dModelControl
             EditorGUILayout.LabelField("targetRadius");
             targetRadius = EditorGUILayout.FloatField(targetRadius);
             EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.LabelField("AttachFollowupCamera");
+            attachFollowupCamera = EditorGUILayout.Toggle(attachFollowupCamera);
+            EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.LabelField("AttachLookupCamera");
+            attachLookupCamera = EditorGUILayout.Toggle(attachLookupCamera);
+            EditorGUILayout.EndHorizontal();
+
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("GenerateRandomCamera");
             if (GUILayout.Button(new GUIContent("CreateCamera"))){
@@ -61,6 +74,17 @@ namespace Unity3dModelControl
             Camera newCamera = newCameraObject.AddComponent<Camera>();
             newCamera.transform.position = RandomCameraPosition(targetPosition);
             newCamera.transform.LookAt(targetPosition);
+            if (attachFollowupCamera)
+            {
+                FollowupCamera followupCamera = newCamera.gameObject.AddComponent<FollowupCamera>();
+                followupCamera.TargetTransform = targetObject;
+                followupCamera.Distance = newCamera.transform.position - targetPosition;
+            }
+            if (attachLookupCamera)
+            {
+                LookupCamera lookupCamera = newCamera.gameObject.AddComponent<LookupCamera>();
+                lookupCamera.TargetTransform = targetObject;
+            }
             Selection.activeGameObject = newCamera.gameObject;
         }
 
